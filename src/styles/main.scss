@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap');
+
+:root {
+  --bg-color: #f0f4f8;
+  /* Keep light for now, but we'll use dark sections */
+  --text-color: #1a2a3a;
+  --accent-pink: #ff0055;
+  --accent-blue: #00d1ff;
+  --accent-green: #00ff99;
+  --accent-yellow: #ffcc00;
+  --accent-purple: #9d00ff;
+  --accent-orange: #f99e1a;
+  /* OW2 Orange */
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+
+  --font-main: 'Inter', sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  --skew-angle: -15deg;
+  /* Re-introducing for specific elements if needed, but keeping general UI straight */
+}
+
+@mixin ow2-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+@mixin tech-border {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+  #animated-cursor {
+    z-index: 9999 !important;
+  }
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+// ::selection {
+//   background: var(--accent-color);
+//   color: var(--bg-color);
+// }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

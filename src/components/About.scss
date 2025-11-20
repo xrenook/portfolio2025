@@ -1,0 +1,177 @@
+@import '../styles/main.scss';
+
+.about {
+    padding: 10rem 2rem;
+    color: var(--text-color);
+
+    @media (max-width: 768px) {
+        padding: 6rem 1.5rem;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 4rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+
+        @media (max-width: 768px) {
+            margin-bottom: 2rem;
+        }
+
+        .section-number {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.05);
+
+
+            @media (max-width: 768px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+
+            @media (max-width: 768px) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .profile-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 2rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .profile-card {
+        @include ow2-card;
+        padding: 2rem;
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 0.5rem;
+
+            h3 {
+                font-family: var(--font-mono);
+                font-size: 1.2rem;
+                color: var(--accent-blue);
+            }
+
+            .tech-deco {
+                width: 20px;
+                height: 20px;
+                background: var(--accent-yellow);
+                clip-path: polygon(0 0, 100% 0, 100% 100%);
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+
+            .highlight {
+                color: var(--accent-pink);
+                font-weight: 700;
+            }
+        }
+
+        .radar-chart {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .radar-svg {
+                width: 100%;
+                height: 100%;
+
+                .data-shape {
+                    animation: pulse-shape 3s ease-in-out infinite;
+                }
+            }
+
+            .radar-labels {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+
+                .label {
+                    position: absolute;
+                    font-family: var(--font-mono);
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    color: var(--text-color);
+                    white-space: nowrap;
+                    transform: translate(-50%, -50%);
+
+                    &.label-top {
+                        top: 5%;
+                        left: 50%;
+                    }
+
+                    &.label-top-right {
+                        top: 25%;
+                        left: 90%;
+                    }
+
+                    &.label-bottom-right {
+                        top: 75%;
+                        left: 90%;
+                    }
+
+                    &.label-bottom {
+                        top: 95%;
+                        left: 50%;
+                    }
+
+                    &.label-bottom-left {
+                        top: 75%;
+                        left: 10%;
+                    }
+
+                    &.label-top-left {
+                        top: 25%;
+                        left: 10%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulse-shape {
+
+    0%,
+    100% {
+        fill-opacity: 0.2;
+    }
+
+    50% {
+        fill-opacity: 0.3;
+    }
+}

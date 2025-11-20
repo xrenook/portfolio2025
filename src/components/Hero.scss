@@ -1,0 +1,155 @@
+@import '../styles/main.scss';
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: #101010;
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 1200px;
+        padding: 0 2rem;
+        margin-top: -50px;
+        /* Visual offset */
+
+        .hero-logo {
+            margin-bottom: 1rem;
+
+            .logo-text {
+                font-family: var(--font-display);
+                font-weight: 900;
+                font-size: 3rem;
+                font-style: italic;
+                letter-spacing: -0.05em;
+                color: #101010;
+                text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+                /* Optional: Add the orange square if desired, but text is fine for now */
+            }
+        }
+
+        .title-container {
+            margin-bottom: 1rem;
+
+            h1 {
+                font-family: var(--font-display);
+                font-size: 5vw;
+                /* Responsive large text */
+                font-weight: 900;
+                font-style: italic;
+                margin: 0;
+                letter-spacing: -0.02em;
+                text-transform: uppercase;
+                color: #101010;
+                text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+                line-height: 0.9;
+
+                @media (max-width: 768px) {
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        .hero-subtitle {
+            margin-bottom: 3rem;
+
+            p {
+                font-family: var(--font-display);
+                font-weight: 800;
+                font-size: 1.2rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #101010;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .cta-container {
+            margin-bottom: 4rem;
+
+            .play-now-btn {
+                background: var(--accent-orange);
+                border: none;
+                padding: 1rem 3rem;
+                font-family: var(--font-display);
+                font-weight: 800;
+                font-size: 1.2rem;
+                color: #101010;
+                text-transform: uppercase;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                box-shadow: 0 4px 20px rgba(249, 158, 26, 0.4);
+                text-decoration: none;
+
+                &:hover {
+                    transform: scale(1.05);
+                    background: lighten(#f99e1a, 5%);
+                    box-shadow: 0 8px 30px rgba(249, 158, 26, 0.6);
+                }
+            }
+        }
+
+        .platform-icons {
+            display: flex;
+            gap: 2rem;
+            opacity: 0.7;
+
+            span {
+                font-family: var(--font-display);
+                font-weight: 700;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+
+                /* Simulate platform logos with text for now */
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+
+                    background: var(--accent-green);
+                    mask-size: contain;
+                    mask-repeat: no-repeat;
+                    mask-position: center;
+                    /* In a real scenario, we'd use actual SVGs here */
+                    border-radius: 50%;
+                    /* Placeholder shape */
+                    opacity: 0.8;
+                }
+            }
+
+            @media (max-width: 768px) {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+    }
+
+    .hero-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(to top, var(--bg-color), transparent);
+        z-index: 1;
+        pointer-events: none;
+    }
+}

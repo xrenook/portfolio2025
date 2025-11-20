@@ -1,0 +1,26 @@
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+
+    .marquee-track {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .marquee-item {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 8rem;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 2px var(--text-color);
+
+        /* Optional: Filled variation */
+        &.filled {
+            color: var(--text-color);
+            -webkit-text-stroke: none;
+        }
+    }
+}
