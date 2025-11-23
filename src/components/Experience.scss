@@ -44,7 +44,7 @@
             text-transform: uppercase;
 
             @media (max-width: 768px) {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
     }
@@ -82,6 +82,11 @@
         &:nth-child(2) {
             top: 40px;
             left: 40px;
+
+            @media (max-width: 768px) {
+            top: 0;
+            left: 0;
+        }
         }
 
         &.top {

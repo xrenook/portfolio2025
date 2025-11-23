@@ -1,10 +1,13 @@
-import { useEffect, useState, useRef } from 'react';
-import MagneticButton from './ui/MagneticButton';
-import './Contact.scss';
+import { useEffect, useState, useRef } from "react";
+import MagneticButton from "./ui/MagneticButton";
+import "./Contact.scss";
 
 const Contact = () => {
   const [time, setTime] = useState(new Date());
-  const [weather, setWeather] = useState<{ temp: number; condition: string } | null>(null);
+  const [weather, setWeather] = useState<{
+    temp: number;
+    condition: string;
+  } | null>(null);
   const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -18,29 +21,29 @@ const Contact = () => {
       try {
         // Using Open-Meteo API (free, no API key required)
         const response = await fetch(
-          'https://api.open-meteo.com/v1/forecast?latitude=-37.8136&longitude=144.9631&current=temperature_2m,weather_code&timezone=Australia/Melbourne'
+          "https://api.open-meteo.com/v1/forecast?latitude=-37.8136&longitude=144.9631&current=temperature_2m,weather_code&timezone=Australia/Melbourne"
         );
         const data = await response.json();
-        
+
         const weatherCodes: { [key: number]: string } = {
-          0: 'Clear',
-          1: 'Mainly Clear',
-          2: 'Partly Cloudy',
-          3: 'Overcast',
-          45: 'Foggy',
-          48: 'Foggy',
-          51: 'Drizzle',
-          61: 'Rain',
-          80: 'Rain Showers',
-          95: 'Thunderstorm'
+          0: "Clear",
+          1: "Mainly Clear",
+          2: "Partly Cloudy",
+          3: "Overcast",
+          45: "Foggy",
+          48: "Foggy",
+          51: "Drizzle",
+          61: "Rain",
+          80: "Rain Showers",
+          95: "Thunderstorm",
         };
 
         setWeather({
           temp: Math.round(data.current.temperature_2m),
-          condition: weatherCodes[data.current.weather_code] || 'Unknown'
+          condition: weatherCodes[data.current.weather_code] || "Unknown",
         });
       } catch (error) {
-        console.error('Failed to fetch weather:', error);
+        console.error("Failed to fetch weather:", error);
       }
     };
 
@@ -53,7 +56,7 @@ const Contact = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
+            entry.target.classList.add("animate");
             observer.unobserve(entry.target);
           }
         });
@@ -62,7 +65,7 @@ const Contact = () => {
     );
 
     if (statsRef.current) {
-      const charts = statsRef.current.querySelectorAll('.pie-chart');
+      const charts = statsRef.current.querySelectorAll(".pie-chart");
       charts.forEach((chart) => observer.observe(chart));
     }
 
@@ -83,7 +86,7 @@ const Contact = () => {
 
         <div className="contact-content">
           <h3>LET'S BUILD SOMETHING AMAZING</h3>
-          
+
           <div className="email-container">
             <MagneticButton strength={50}>
               <a href="mailto:sendtoxren@gmail.com" className="email-link">
@@ -93,9 +96,9 @@ const Contact = () => {
           </div>
 
           <div className="social-links">
-            <a 
-              href="https://www.linkedin.com/in/xiang-ren-538737108/" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/xiang-ren-538737108/"
+              target="_blank"
               rel="noopener noreferrer"
               className="social-link"
             >
@@ -103,9 +106,9 @@ const Contact = () => {
               LinkedIn
               <span className="bracket">]</span>
             </a>
-            <a 
-              href="https://github.com/xrenook" 
-              target="_blank" 
+            <a
+              href="https://github.com/xrenook"
+              target="_blank"
               rel="noopener noreferrer"
               className="social-link"
             >
@@ -117,7 +120,9 @@ const Contact = () => {
 
           <div className="footer-status">
             <div className="status-dot"></div>
-            <span>XIANG REN // 2025 // INSPIRED BY OVERWATCH // POWERED BY GENIMI</span>
+            <span>
+              XIANG REN // 2025 // INSPIRED BY OVERWATCH // POWERED BY GENIMI
+            </span>
           </div>
           {/* Build Stats Section */}
           <div className="build-stats" ref={statsRef}>
@@ -243,7 +248,7 @@ const Contact = () => {
                       className="chart-label-main"
                       fill="var(--text-color)"
                     >
-                      3 HRS
+                      4 HRS
                     </text>
                     <text
                       x="100"
@@ -283,11 +288,11 @@ const Contact = () => {
         <div className="info-item">
           <span className="info-label">LOCAL TIME</span>
           <span className="info-value">
-            {time.toLocaleTimeString('en-AU', { 
-              hour: '2-digit', 
-              minute: '2-digit',
-              second: '2-digit',
-              hour12: false 
+            {time.toLocaleTimeString("en-AU", {
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+              hour12: false,
             })}
           </span>
         </div>
@@ -295,7 +300,9 @@ const Contact = () => {
         <div className="info-item">
           <span className="info-label">MELBOURNE</span>
           <span className="info-value">
-            {weather ? `${weather.temp}°C • ${weather.condition}` : 'Loading...'}
+            {weather
+              ? `${weather.temp}°C • ${weather.condition}`
+              : "Loading..."}
           </span>
         </div>
       </div>
