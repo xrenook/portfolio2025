@@ -68,14 +68,12 @@ export default function ParticleField({
         <bufferAttribute
           attach="attributes-position"
           count={count}
-          array={particlesPosition.positions}
-          itemSize={3}
+          args={[particlesPosition.positions, 3]}
         />
         <bufferAttribute
           attach="attributes-color"
           count={count}
-          array={particlesPosition.colors}
-          itemSize={3}
+          args={[particlesPosition.colors, 3]}
         />
       </bufferGeometry>
       <pointsMaterial
