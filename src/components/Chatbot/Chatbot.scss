@@ -14,7 +14,7 @@ $ow-blue: #00c3ff;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font-family: 'Inter', sans-serif; // Or a tech font if available
+  font-family: "Inter", sans-serif; // Or a tech font if available
 
   .chatbot-toggle {
     width: 64px;
@@ -34,13 +34,17 @@ $ow-blue: #00c3ff;
     overflow: hidden;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%);
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0) 50%
+      );
       pointer-events: none;
     }
 
@@ -53,7 +57,7 @@ $ow-blue: #00c3ff;
     svg {
       width: 28px;
       height: 28px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     }
   }
 
@@ -67,9 +71,12 @@ $ow-blue: #00c3ff;
     backdrop-filter: blur(10px);
     // Tech border with angled corners
     clip-path: polygon(
-      20px 0, 100% 0, 
-      100% calc(100% - 20px), calc(100% - 20px) 100%, 
-      0 100%, 0 20px
+      20px 0,
+      100% 0,
+      100% calc(100% - 20px),
+      calc(100% - 20px) 100%,
+      0 100%,
+      0 20px
     );
     border: none; // Using pseudo-element for border to handle clip-path
     display: flex;
@@ -77,22 +84,30 @@ $ow-blue: #00c3ff;
     overflow: hidden;
     transform-origin: bottom right;
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
-    
+
     // Border effect
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(45deg, $ow-orange, transparent 40%, transparent 60%, $ow-orange);
+      background: linear-gradient(
+        45deg,
+        $ow-orange,
+        transparent 40%,
+        transparent 60%,
+        $ow-orange
+      );
       z-index: -1;
       clip-path: polygon(
-        20px 0, 100% 0, 
-        100% calc(100% - 20px), calc(100% - 20px) 100%, 
-        0 100%, 0 20px
+        20px 0,
+        100% 0,
+        100% calc(100% - 20px),
+        calc(100% - 20px) 100%,
+        0 100%,
+        0 20px
       );
       padding: 2px; // Border width
-      -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
@@ -156,8 +171,7 @@ $ow-blue: #00c3ff;
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
-      background: 
-        linear-gradient(rgba($ow-dark, 0.9), rgba($ow-dark, 0.9)),
+      background: linear-gradient(rgba($ow-dark, 0.9), rgba($ow-dark, 0.9)),
         repeating-linear-gradient(
           45deg,
           transparent,
@@ -169,15 +183,15 @@ $ow-blue: #00c3ff;
       &::-webkit-scrollbar {
         width: 6px;
       }
-      
+
       &::-webkit-scrollbar-track {
-        background: rgba(0,0,0,0.2);
+        background: rgba(0, 0, 0, 0.2);
       }
-      
+
       &::-webkit-scrollbar-thumb {
         background: $ow-grey;
         border-radius: 0;
-        
+
         &:hover {
           background: $ow-orange;
         }
@@ -189,7 +203,7 @@ $ow-blue: #00c3ff;
         font-size: 0.95rem;
         line-height: 1.5;
         position: relative;
-        
+
         &.user {
           align-self: flex-end;
           background: rgba($ow-orange, 0.9);
@@ -202,23 +216,33 @@ $ow-blue: #00c3ff;
           align-self: flex-start;
           background: rgba($ow-grey, 0.9);
           color: $ow-light;
-          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 10px),
+            calc(100% - 10px) 100%,
+            0 100%
+          );
           border-right: 3px solid $ow-orange;
         }
 
         .loading-dots {
           display: flex;
           gap: 6px;
-          
+
           span {
             width: 6px;
             height: 6px;
             background: $ow-orange;
             transform: skew(-10deg);
             animation: bounce 1.4s infinite ease-in-out both;
-            
-            &:nth-child(1) { animation-delay: -0.32s; }
-            &:nth-child(2) { animation-delay: -0.16s; }
+
+            &:nth-child(1) {
+              animation-delay: -0.32s;
+            }
+            &:nth-child(2) {
+              animation-delay: -0.16s;
+            }
           }
         }
       }
@@ -283,10 +307,19 @@ $ow-blue: #00c3ff;
         }
       }
     }
+    @media (max-width: 768px) {
+      width: 80vw;
+    }
   }
 }
 
 @keyframes bounce {
-  0%, 80%, 100% { transform: skew(-10deg) scale(0); }
-  40% { transform: skew(-10deg) scale(1); }
+  0%,
+  80%,
+  100% {
+    transform: skew(-10deg) scale(0);
+  }
+  40% {
+    transform: skew(-10deg) scale(1);
+  }
 }
