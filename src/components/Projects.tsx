@@ -18,6 +18,15 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    title: "Cyber Judger",
+    category: "Playground",
+    description:
+      "A React-based web application where users can share cases and judge others' cases anonymously.",
+    image: "/assets/images/works/work00.png",
+    link: "https://cyber-judger.netlify.app//",
+    technologies: ["ReactJS", "Firebase", "Google OAuth"],
+  },
+  {
     title: "David Jones Checkout Prototype",
     category: "E-COMMERCE",
     description:
