@@ -18,12 +18,21 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    title: "Online Office",
+    category: "Playground",
+    description:
+      "A React-based web application, using PixiJS Firebase see office online with other users in real-time.",
+    image: "/assets/images/works/office.png",
+    link: "pixelonlineoffice.netlify.app",
+    technologies: ["ReactJS", "PixiJS", "Firebase", "Google OAuth"],
+  },
+  {
     title: "Cyber Judger",
     category: "Playground",
     description:
       "A React-based web application where users can share cases and judge others' cases anonymously.",
     image: "/assets/images/works/work00.png",
-    link: "https://cyber-judger.netlify.app//",
+    link: "https://cyber-judger.netlify.app/",
     technologies: ["ReactJS", "Firebase", "Google OAuth"],
   },
   {
