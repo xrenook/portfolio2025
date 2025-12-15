@@ -1,7 +1,7 @@
 export const portfolioData = `
 Name: Xiang Ren (Renxiang)
 Role: Front-End / CRO Engineer
-Location: Sydney, Australia
+Location: Melbourne, Australia
 
 Bio:
 Front-End & Growth / CRO Engineer with 5+ years of experience delivering scalable, performant, and accessible web applications across SaaS, retail, and e-commerce platforms. Expert in React, TypeScript, design systems, front-end architecture, and modern tooling.
@@ -36,6 +36,6 @@ Projects:
 
 Contact:
 - Email: sendtoxren@gmail.com
-- LinkedIn: https://www.linkedin.com/in/renxiang/
-- GitHub: https://github.com/renxiang
+- LinkedIn: https://www.linkedin.com/in/xiang-ren-538737108/
+- GitHub: https://github.com/xrenook
 `;
