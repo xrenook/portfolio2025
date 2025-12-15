@@ -23,7 +23,7 @@ const projectsData: Project[] = [
     description:
       "A React-based web application, using PixiJS Firebase see office online with other users in real-time.",
     image: "/assets/images/works/office.png",
-    link: "pixelonlineoffice.netlify.app",
+    link: "https://pixelonlineoffice.netlify.app",
     technologies: ["ReactJS", "PixiJS", "Firebase", "Google OAuth"],
   },
   {
